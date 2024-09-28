@@ -28,16 +28,12 @@ void ESP8266_Init(void)
 {
 	memset(RxData,0,sizeof(RxData));
 	Serial_Printf("AT+RST\r\n");
-	Delay_s(3);
+	Delay_s(4);
 	
 	memset(RxData,0,sizeof(RxData));
 	Serial_Printf("AT+CWMODE=1\r\n");
-	Delay_s(1);
-	
-	memset(RxData,0,sizeof(RxData));
-	Serial_Printf("AT+CWMODE=1\r\n");
-	Delay_s(1);
-	
+	Delay_s(2);
+
 	memset(RxData,0,sizeof(RxData));
 	Serial_Printf("AT+CIPSNTPCFG=1,8,\"ntp1.aliyun.com\"\r\n");
 	Delay_s(2);
@@ -63,8 +59,8 @@ void ESP8266_Init(void)
 bool ESP8266_SUB()
 {
 	memset(RxData,0,sizeof(RxData));
-	Serial_Printf("AT+MQTTSUB=0,\"%s\",1\r\n\r\n",subtopic);
-	Delay_s(1);
+	Serial_Printf("AT+MQTTSUB=0,\"%s\",1\r\n",subtopic);
+	Delay_ms(200);
 	if(strcmp(RxData,"OK")){
 		return true;
 	}
@@ -76,14 +72,14 @@ bool ESP8266_SUB()
 bool ESP8266_PUB()
 {
 	memset(RxData,0,sizeof(RxData));
-	Serial_Printf("AT+MQTTPUB=0,\"%s\",\"{\\\"method\\\":\\\"thing.event.property.post\\\"\\,\\\"params\\\":{\\\"%s\\\":%f\\,\\\"%s\\\":%f\\,\\\"%s\\\":%d}}\",0,0\r\n"
+	Serial_Printf("AT+MQTTPUB=0,\"%s\",\"{\\\"method\\\":\\\"thing.event.property.post\\\"\\,\\\"params\\\":{\\\"%s\\\":%.2f\\,\\\"%s\\\":%.2f\\,\\\"%s\\\":%d}}\",0,0\r\n"
 	,pubtopic,func1,temperature,func2,Humidity,func3,LED);
 	Delay_ms(300);
-	if(strcmp(RxData,"ERROR")){
-		return false;
+	if(strcmp(RxData,"OK")){
+		return true;
 	}
 	else{
-		return true;
+		return false;
 	}
 }
 
