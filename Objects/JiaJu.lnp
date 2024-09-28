@@ -1,0 +1,21 @@
+--cpu Cortex-M3
+".\objects\delay.o"
+".\objects\serial.o"
+".\objects\key.o"
+".\objects\led.o"
+".\objects\dht11.o"
+".\objects\oled.o"
+".\objects\oled_data.o"
+".\objects\esp8266.o"
+".\objects\main.o"
+".\objects\misc.o"
+".\objects\stm32f10x_exti.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\stm32f10x_usart.o"
+".\objects\startup_stm32f10x_md.o"
+".\objects\system_stm32f10x.o"
+--strict --scatter ".\Objects\JiaJu.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\JiaJu.map" -o .\Objects\JiaJu.axf
