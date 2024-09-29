@@ -16,7 +16,6 @@ void DH11_GPIO_Init_OUT(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 }//stm32输出
 
-
 void DH11_GPIO_Init_IN(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -26,7 +25,6 @@ void DH11_GPIO_Init_IN(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 }//stm32输入
-
 
 //主机发送开始信号
 void DHT11_Start(void)
@@ -55,7 +53,6 @@ void DHT11_Start(void)
 	DH11_GPIO_Init_IN();
 	//配置stm32为输入模式，等待接收DHT11采集数据
 }
-
 
 //获取一个字节
 char DHT11_Rec_Byte(void)
@@ -100,7 +97,6 @@ char DHT11_Rec_Byte(void)
 void DHT11_REC_Data(void)
 {
 	unsigned char  H_H,H_L,T_H,T_L,CHECK;
-	
 	DHT11_Start();
 	//主机发送信号,等待数据
 	DHT11_H;
@@ -126,7 +122,6 @@ void DHT11_REC_Data(void)
 		*/
 		DHT11_H; 
 		//随后总线拉高进入空闲状态。
-		
 		if(H_H + H_L + T_H + T_L == CHECK)
 		{
 			temp = ( T_H * 100 + T_L ) * 1.0 / 100;

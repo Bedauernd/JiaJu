@@ -24,8 +24,7 @@ const char* func1 = "temperature";
 const char* func2 = "Humidity";
 const char* func3 = "LightSwitch";
 
-void ESP8266_Init(void)
-{
+void ESP8266_Init(void){
 	memset(RxData,0,sizeof(RxData));
 	Serial_Printf("AT+RST\r\n");
 	Delay_s(4);
@@ -61,10 +60,12 @@ bool ESP8266_SUB()
 	memset(RxData,0,sizeof(RxData));
 	Serial_Printf("AT+MQTTSUB=0,\"%s\",1\r\n",subtopic);
 	Delay_ms(200);
-	if(strcmp(RxData,"OK")){
+	if(strcmp(RxData,"OK"))
+	{
 		return true;
 	}
-	else{
+	else
+	{
 		return false;
 	}
 }
@@ -75,10 +76,12 @@ bool ESP8266_PUB()
 	Serial_Printf("AT+MQTTPUB=0,\"%s\",\"{\\\"method\\\":\\\"thing.event.property.post\\\"\\,\\\"params\\\":{\\\"%s\\\":%.2f\\,\\\"%s\\\":%.2f\\,\\\"%s\\\":%d}}\",0,0\r\n"
 	,pubtopic,func1,temperature,func2,Humidity,func3,LED);
 	Delay_ms(300);
-	if(strcmp(RxData,"OK")){
+	if(strcmp(RxData,"OK"))
+	{
 		return true;
 	}
-	else{
+	else
+	{
 		return false;
 	}
 }
@@ -88,7 +91,7 @@ void command(void)
 	if(strncmp(RxData,"+MQTTSUBRECV:",13)==0)
 	{
 		uint8_t i=0;
-		while(RxData[i++] != '\0')             
+		while(RxData[i++] != '\0')
 		{
 			if(strncmp((RxData+i),func3,12)==0)
 			{
@@ -98,4 +101,3 @@ void command(void)
 		}
 	}
 }
-	
