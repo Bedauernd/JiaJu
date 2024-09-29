@@ -28,7 +28,6 @@ int main(void)
 		DHT11_REC_Data();
 		temperature = DHT11_Get_Temp();
 		Humidity = DHT11_Get_Hum();
-		OLED_ShowChinese(48,0,"测试");
 		OLED_ShowChinese(0,16,"温度：");
 		OLED_ShowChinese(0,32,"湿度：");
 		OLED_ShowChinese(0,48,"灯光：");
@@ -49,10 +48,19 @@ int main(void)
 		{
 			LED_Turn();
 		}
-		if(count%300 == 0)
+		if(count%200 == 0)
 		{
-			ESP8266_PUB();
+			if(ESP8266_PUB())
+			{
+				OLED_ShowString(0,0,"True",OLED_8X16);
+			}
+			else
+			{
+				OLED_ShowString(0,0,"False",OLED_8X16);
+			}
 			count = 0;
+			OLED_Update();
+			Delay_s(2);
 		}
 		OLED_Clear();
 		count += 1;
