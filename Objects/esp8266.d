@@ -1,4 +1,4 @@
-./objects/esp8266.o: Hardware\ESP8266.c System\Delay.h \
+./objects/esp8266.o: Hardware\ESP8266.c Hardware\LED.h System\Delay.h \
   C:\Users\feath\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
   RTE\_Target_1\RTE_Components.h \
   C:\Users\feath\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include\core_cm3.h \

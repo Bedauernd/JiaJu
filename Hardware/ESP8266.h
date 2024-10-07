@@ -6,6 +6,6 @@
 void ESP8266_Init(void);
 bool ESP8266_SUB();
 bool ESP8266_PUB();
-void command(void);
+void ESP8266_GET();
 
 #endif

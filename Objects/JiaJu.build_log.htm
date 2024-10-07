@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.41.0.0
 Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information:  ,  , LIC=21E4T-RZ2VD-PCZJ8-3JQ5S-IVFYY-PT1VA
+License Information:  ,  , LIC=65ISZ-JEHNP-SBBEJ-U18XN-84HU3-E6SM9
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.41.0.0
@@ -21,34 +21,34 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.3.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-c:\Users\feath\Desktop\STM32\JiaJu\JiaJu.uvprojx
-Project File Date:  09/29/2024
+C:\Users\feath\Desktop\STM32\JiaJu\JiaJu.uvprojx
+Project File Date:  10/07/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'D:\Work\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Target_1'
 compiling OLED_Data.c...
-compiling Delay.c...
-compiling DHT11.c...
-compiling misc.c...
-compiling LED.c...
 compiling stm32f10x_exti.c...
+compiling DHT11.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_usart.c...
+compiling ESP8266.c...
 System/Serial.c(146): warning: unused parameter 'f' [-Wunused-parameter]
   146 | int fputc(int ch, FILE *f)
       |                         ^
 1 warning generated.
 compiling Serial.c...
-compiling main.c...
+compiling misc.c...
+compiling Delay.c...
 compiling KEY.c...
-assembling startup_stm32f10x_md.s...
-compiling ESP8266.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_usart.c...
 compiling system_stm32f10x.c...
+compiling stm32f10x_gpio.c...
+compiling LED.c...
+compiling main.c...
 compiling OLED.c...
+assembling startup_stm32f10x_md.s...
 linking...
-Program Size: Code=18440 RO-data=4104 RW-data=44 ZI-data=2892  
+Program Size: Code=18672 RO-data=4180 RW-data=52 ZI-data=2892  
 ".\Objects\JiaJu.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -82,10 +82,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.1.0
 
    * Component: Keil::Device:Startup@1.0.0
-      Source file:   Device/Source/system_stm32f10x.c
-      Include file:  RTE_Driver/Config/RTE_Device.h
-      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/system_stm32f10x.c
 
    * Component: Keil::Device:StdPeriph Drivers:EXTI@3.6.0
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_exti.c
@@ -94,22 +94,22 @@ Package Vendor: Keil
    * Component: Keil::Device:StdPeriph Drivers:Framework@3.6.0
       Source file:   Device/StdPeriph_Driver/src/misc.c
       Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
-      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
-      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
       Include file:  Device/StdPeriph_Driver/inc/misc.h
+      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
 
    * Component: Keil::Device:StdPeriph Drivers:GPIO@3.6.0
-      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
       Include file:  Device/StdPeriph_Driver/inc/stm32f10x_gpio.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_gpio.c
 
    * Component: Keil::Device:StdPeriph Drivers:RCC@3.6.0
-      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
 
    * Component: Keil::Device:StdPeriph Drivers:USART@3.6.0
-      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_usart.h
       Source file:   Device/StdPeriph_Driver/src/stm32f10x_usart.c
-Build Time Elapsed:  00:00:02
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_usart.h
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

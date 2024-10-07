@@ -213,7 +213,7 @@ void USART1_IRQHandler(void)
 		{
 			RxData[i-2] = '\0';
 			i = 0;
-			command();
+			ESP8266_GET();
 		}
 	}
 }

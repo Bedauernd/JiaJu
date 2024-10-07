@@ -28,7 +28,7 @@ void LED_OFF(void)//LED1熄灭程序
 void LED_Turn(void)//状态取反。实现按下送开LED亮，按下送开LED熄灭
 {
 	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_2) == 0)
-	{ 
+	{
 		GPIO_SetBits(GPIOA, GPIO_Pin_2);
 	}
 	else
@@ -36,3 +36,5 @@ void LED_Turn(void)//状态取反。实现按下送开LED亮，按下送开LED�
 		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
 	}
 }
+
+

@@ -30,3 +30,4 @@ bool Key_Sign(void)
 	}
 	return sign;
 }
+ 
